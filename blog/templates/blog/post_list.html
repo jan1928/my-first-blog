@@ -6,19 +6,13 @@
 <body>
 	<p><em><b>Halli-Hallo!</b></em></p>
 	<div>
-		Ein erster div Abschnitt
-		noch etwas mehr Text.
+		{% for post in posts %}
+    		   <article>
+        		<time>published: {{ post.published_date }}</time>
+        		<h2><a href="">{{ post.title }}</a></h2>
+       			 <p>{{ post.text|linebreaksbr }}</p>
+    		   </article>
+	        {% endfor %}
 	</div>
-	<article>
-		Hier schreibe ich einen etwas längeren Text, mal sehen wie es aussieht.<br>
-		Am liebsten würde ich hier den Inhalt der Datenbank anzeigen.
-		Aber das kommt wohl erst später.
-	</article>
-	<section>
-		Eine Sektion, ich habe keine Ahnung was das sein soll.
-		Eine zweite Zeile.
-		Eine dritte Zeile.
-	</section>
-    <p>Es funktioniert!</p>
 </body>
 </html>
